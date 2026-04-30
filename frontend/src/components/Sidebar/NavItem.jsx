@@ -23,8 +23,8 @@ function NavItem({ label, icon, isActive, onClick }) {
         <button
             onClick={onClick}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                    ? 'bg-lime-400 text-gray-900'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    ? 'bg-active-bg text-active-text'
+                    : 'text-text-secondary hover:bg-bg-card hover:text-text-primary'
                 }`}
         >
             <span className="text-lg">{icon}</span>

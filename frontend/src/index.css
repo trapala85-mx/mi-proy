@@ -1,5 +1,40 @@
+/* src/index.css */
 @import "tailwindcss";
 
 @theme {
+    /* ============================================
+       COLORES BASE - Fondos
+       ============================================ */
     --color-bg-global: #1E2939;
+    --color-bg-header: #1f2937;
+    --color-bg-sidebar: #1f2937;
+    --color-bg-card: #374151;
+    --color-bg-hover: #4b5563;
+
+    /* ============================================
+       COLORES BASE - Texto
+       ============================================ */
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d1d5db;
+    --color-text-muted: #9ca3af;
+    --color-text-inverse: #111827;
+
+    /* ============================================
+       COLORES BASE - Acento / Marca (verde lima)
+       ============================================ */
+    --color-accent: #a3e635;
+    --color-accent-hover: #84cc16;
+
+    /* ============================================
+       COLORES BASE - Bordes
+       ============================================ */
+    --color-border-default: #374151;
+
+    /* ============================================
+       COLORES SEMÁNTICOS - Estados
+       Usan los base de arriba, pero describen 
+       para qué sirven, no qué color son
+       ============================================ */
+    --color-active-bg: var(--color-accent);
+    --color-active-text: var(--color-text-inverse);
 }

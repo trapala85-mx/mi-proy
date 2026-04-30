@@ -12,7 +12,7 @@
 function SidebarHeader() {
     return (
         <div className="px-4 py-6">
-            <h2 className="text-lime-400 text-sm font-bold uppercase tracking-widest">
+            <h2 className="text-accent text-sm font-bold uppercase tracking-widest">
                 Menú
             </h2>
         </div>

@@ -1,6 +1,34 @@
 import Header from './components/Header/Header.jsx';
 import Sidebar from './components/Sidebar/Sidebar.jsx';
+import Home from './pages/Dashboard/Home.jsx';
+import Proyectos from './pages/Dashboard/Proyectos.jsx';
+import InstrumentosLegales from './pages/Dashboard/InstrumentosLegales.jsx';
+import Configuracion from './pages/Dashboard/Configuracion.jsx';
 import { useModuleNavigation } from './hooks/useModuleNavigation.js';
+
+/**
+ * Orquestador de contenido del dashboard.
+ *
+ * Recibe el ID del módulo activo y devuelve el componente de página correspondiente.
+ *
+ * @param {string} activeModule - ID del módulo activo.
+ * @returns {JSX.Element} Componente de página a renderizar.
+ */
+
+function renderModuleContent(activeModule) {
+  switch (activeModule) {
+    case 'home':
+      return <Home />;
+    case 'proyectos':
+      return <Proyectos />;
+    case 'instrumentosLegales':
+      return <InstrumentosLegales />;
+    case 'configuracion':
+      return <Configuracion />;
+    default:
+      return <Home />;
+  }
+}
 
 function App() {
   const { activeModule, handleModuleChange } = useModuleNavigation();
@@ -14,8 +42,7 @@ function App() {
         <Header />
 
         <main className="p-6">
-          <h1 className="text-2xl font-bold">Resumen General</h1>
-          <p className="mt-4 text-gray-400">Aquí se mostrarán las gráficas y el resumen del proyecto seleccionado.</p>
+          {renderModuleContent(activeModule)}
         </main>
 
       </div>

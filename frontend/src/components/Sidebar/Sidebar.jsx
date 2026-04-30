@@ -47,7 +47,7 @@ function Sidebar({ onModuleChange }) {
     };
 
     return (
-        <aside className="w-64 bg-gray-800 border-r border-gray-700 flex flex-col">
+        <aside className="w-64 bg-bg-sidebar border-r border-border-default flex flex-col">
             <SidebarHeader />
             <NavMenu
                 items={modules}
