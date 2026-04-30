@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bg-global: #1E2939;
+}
