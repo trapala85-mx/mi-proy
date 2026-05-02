@@ -8,29 +8,29 @@ import NavItem from './NavItem.jsx';
  *
  * @param {Object} props - Propiedades del componente.
  * @param {Array<{label: string, icon: string, id: string}>} props.items - Lista de módulos.
- * @param {string} props.activeId - ID del módulo actualmente activo.
- * @param {Function} props.onSelect - Callback que recibe el ID del módulo seleccionado.
+ * @param {string} props.activeKey - Key del módulo actualmente activo.
+ * @param {Function} props.onSelect - Callback que recibe el Key del módulo seleccionado.
  *
  * @example
  * <NavMenu
  *   items={[
- *     { id: 'home', label: 'Home', icon: '🏠' },
- *     { id: 'proyectos', label: 'Proyectos', icon: '📁' },
+ *     { key: 'home', label: 'Home', icon: '🏠' },
+ *     { key: 'proyectos', label: 'Proyectos', icon: '📁' },
  *   ]}
  *   activeId="home"
- *   onSelect={(id) => setActive(id)}
+ *   onSelect={(key) => setActive(key)}
  * />
  */
-function NavMenu({ items, activeId, onSelect }) {
+function NavMenu({ items, activeKey, onSelect }) {
     return (
         <nav className="flex flex-col gap-1 px-2">
             {items.map((item) => (
                 <NavItem
-                    key={item.id}
+                    key={item.key}
                     label={item.label}
                     icon={item.icon}
-                    isActive={activeId === item.id}
-                    onClick={() => onSelect(item.id)}
+                    isActive={activeKey === item.key}
+                    onClick={() => onSelect(item.key)}
                 />
             ))}
         </nav>

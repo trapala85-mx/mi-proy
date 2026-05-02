@@ -11,7 +11,7 @@ import { useModuleNavigation } from './hooks/useModuleNavigation.js';
  *
  * Recibe el ID del módulo activo y devuelve el componente de página correspondiente.
  *
- * @param {string} activeModule - ID del módulo activo.
+ * @param {string} activeModule - Key del módulo activo.
  * @returns {JSX.Element} Componente de página a renderizar.
  */
 
@@ -21,7 +21,7 @@ function renderModuleContent(activeModule) {
       return <Home />;
     case 'proyectos':
       return <Proyectos />;
-    case 'instrumentosLegales':
+    case 'instrumentos':
       return <InstrumentosLegales />;
     case 'configuracion':
       return <Configuracion />;

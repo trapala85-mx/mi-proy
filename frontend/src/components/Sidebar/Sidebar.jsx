@@ -15,34 +15,34 @@ import NavMenu from './NavMenu.jsx';
  * @returns {JSX.Element} Barra lateral completa.
  *
  * @example
- * <Sidebar onModuleChange={(id) => console.log('Módulo:', id)} />
+ * <Sidebar onModuleChange={(key) => console.log('Módulo:', key)} />
  */
 
 function Sidebar({ onModuleChange }) {
-    /** ID del módulo actualmente activo. */
-    const [activeId, setActiveId] = useState('home');
+    /** Key del módulo actualmente activo. */
+    const [activeKey, setActiveKey] = useState('home');
 
     /**
      * Lista de módulos disponibles en el sistema.
      * TODO: Reemplazar con fetch a API cuando el backend esté listo.
      */
     const modules = [
-        { id: 'home', label: 'Home', icon: '🏠' },
-        { id: 'proyectos', label: 'Proyectos', icon: '📁' },
-        { id: 'instrumentos', label: 'Instrumentos Legales', icon: '📄' },
-        { id: 'configuracion', label: 'Configuración', icon: '⚙️' },
+        { key: 'home', label: 'Home', icon: '🏠' },
+        { key: 'proyectos', label: 'Proyectos', icon: '📁' },
+        { key: 'instrumentos', label: 'Instrumentos Legales', icon: '📄' },
+        { key: 'configuracion', label: 'Configuración', icon: '⚙️' },
     ];
 
     /**
      * Maneja la selección de un módulo.
      * Actualiza el estado local y notifica al padre.
      *
-     * @param {string} id - ID del módulo seleccionado.
+     * @param {string} key - Key del módulo seleccionado.
      */
-    const handleSelect = (id) => {
-        setActiveId(id);
+    const handleSelect = (key) => {
+        setActiveKey(key);
         if (onModuleChange) {
-            onModuleChange(id);
+            onModuleChange(key);
         }
     };
 
@@ -51,7 +51,7 @@ function Sidebar({ onModuleChange }) {
             <SidebarHeader />
             <NavMenu
                 items={modules}
-                activeId={activeId}
+                activeKey={activeKey}
                 onSelect={handleSelect}
             />
         </aside>
